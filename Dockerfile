@@ -22,6 +22,7 @@ RUN rm -rf /var/lib/apt/lists
 
 WORKDIR /home/nvidia/catkin_ws
 
+RUN cd ..
 RUN wget https://github.com/IntelRealSense/librealsense/archive/refs/tags/v2.47.0.tar.gz && tar -xvf v2.47.0.tar.gz
 
 RUN cd librealsense-2.47.0/ && mkdir build && cd build &&  cmake ../ -DFORCE_RSUSB_BACKEND=true -DBUILD_PYTHON_BINDINGS=true -DCMAKE_BUILD_TYPE=release -DBUILD_EXAMPLES=true -DBUILD_WITH_CUDA=true -DBUILD_GRAPHICAL_EXAMPLES=true && make -j8 && make install
