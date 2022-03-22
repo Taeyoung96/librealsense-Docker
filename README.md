@@ -24,10 +24,12 @@ You could use other version.
 In your local computer, you could clone [realsense-ros](https://github.com/IntelRealSense/realsense-ros/releases/tag/2.3.0), and use `--volume` option.  
 
 ```
+xhost +local:docker
+
 nvidia-docker run -it --net=host --runtime nvidia -e DISPLAY=$DISPLAY \
 --privileged --ipc=host -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /tmp/argus_socket:/tmp/argus_socket \
 --volume=/dev:/dev -v [Absolute PATH for realsense-ros]:/home/nvidia/catkin_ws/src \
---cap-add SYS_PTRACE --name realsense_d455 ros1-realsense-cuda:latest /bin/bash
+--cap-add SYS_PTRACE --name realsense_d455 tyoung96/realsense-ros1-cuda:latest /bin/bash
 ```
 
 On your docker container, after changing the path to `catkin_ws/` and build your [realsense-ros](https://github.com/IntelRealSense/realsense-ros/releases/tag/2.3.0)
@@ -51,3 +53,6 @@ roslaunch realsense2_camera rs_camera.launch
 
 ## Reference  
 
+- [AndreV84/jetson-containers](https://github.com/AndreV84/jetson-containers)  
+- [iory/docker-ros-realsense](https://github.com/iory/docker-ros-realsense)  
+- [Run realsense D455 on docker #1794](https://github.com/IntelRealSense/realsense-ros/issues/1794)  
