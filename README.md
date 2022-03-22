@@ -50,6 +50,7 @@ roslaunch realsense2_camera rs_camera.launch
 
 ## Result  
 
+<p align="center"><img src="https://user-images.githubusercontent.com/41863759/159408377-3bcd94d0-3b90-4c29-bb15-46b0fb9e7a53.png" width = "650" ></p>  
 
 ## Reference  
 
